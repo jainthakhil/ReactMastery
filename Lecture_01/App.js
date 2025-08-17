@@ -11,7 +11,12 @@ root.render(para); // rendering the element inside the root
 */
 //* React.createElement() creates a JavaScript Object which takes tagName, children and attributes  
 
-//? render() method takes this object and converting it into the desired html tag which browser understands and put it on the DOM
+//* ReactDOM.createRoot() is responsible for creating root or assigning root, means we can say the area where the react code will be injected or can work
+
+//* render(Element) method takes this object (Element) and converting it into the desired html tag which browser understands and put it on the DOM
+
+//! root.render(element) will replace anything present inside the root element already with the element, if some tag is already present inside the root it will be replaced by the element because of render() method
+
 
 //todo: creating nested elements in react 
 //*one element inside the another
@@ -26,6 +31,8 @@ const parent = React.createElement(
 
 //todo: creating sibling elements in react
 //* more than one elements on the same heirarchy level
+//? here in the children area of parent element we will use an array in which we will be creating child elements 
+
 const master = React.createElement("div",
     { id: "master" },
     [
@@ -39,6 +46,8 @@ const master = React.createElement("div",
         )
     ]
 )
+
+
 console.log(master)
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(master);

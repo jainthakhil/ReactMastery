@@ -1,0 +1,19 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": " React Learning Series",
+  "main": "App.js ",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jainthakhil/ReactMastery.git"
+  },
+  "author": "Akhil Jainth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jainthakhil/ReactMastery/issues"
+  },
+  "homepage": "https://github.com/jainthakhil/ReactMastery#readme"
+}
