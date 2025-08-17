@@ -1,8 +1,7 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "description": " React Learning Series",
-  "main": "App.js ",
+  "description": "React Learning Series",
   "scripts": {
     "test": "jest"
   },
@@ -18,5 +17,9 @@
   "homepage": "https://github.com/jainthakhil/ReactMastery#readme",
   "devDependencies": {
     "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   }
 }
