@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jainthakhil/ReactMastery/issues"
   },
-  "homepage": "https://github.com/jainthakhil/ReactMastery#readme"
+  "homepage": "https://github.com/jainthakhil/ReactMastery#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
 }
