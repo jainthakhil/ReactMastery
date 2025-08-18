@@ -109,8 +109,14 @@ eg., => "parcel": "^2.15.4"
 <!--!  we dont need these file on github -->
 
 {
+
 <!--? how to make our app compatible with older browsers -->
 
-<!--* browserslist is a thing in node_modules which takes care of this and we have to configure it -->
+<!--* browserslist is a thing in node_modules which takes care of this and we have to configure it in package.json file -->
+ <!--todo: "browserslist": [ "last 2 Chrome version, last 3 Edge version"] this will make the app compatible with defined browser versions-->
+
+# browserslist take an array or browser versions
+
+# best practice is to write "last 2 versions" in the array this will make the app compatible with all the last 2 versions of all the browsers
 
 }

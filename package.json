@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "React Learning Series",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -21,5 +23,8 @@
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
-  }
+  },
+  "browserslist": [
+    "last 2 versions of chrome"
+  ]
 }
