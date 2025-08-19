@@ -78,3 +78,14 @@ Rendering a Comp => <ComponentName/>
 <Component/> = <Component></Component>
 
 <!--todo: A functional component is a JS function at the end of the day, so we can render a component like this as well => "Component()" -->
+
+<!--todo: this is also can be done, this is totally fine -->
+
+const paragraph = React.createElement("p", {}, "I am a new Paragraph");
+const akhil = () => React.createElement("div", {},
+React.createElement("div", {},
+React.createElement("p", {}, "Hello i am at the bottom level."),
+paragraph
+),
+paragraph
+)
