@@ -34,7 +34,16 @@ const HeadingComp3 = () => (
     </div>
 )
 
+//todo: play with the code-
+const paragraph = React.createElement("p", {}, "I am a new Paragraph");
+const akhil = () => React.createElement("div", {},
+    React.createElement("div", {},
+        React.createElement("p", {}, "Hello i am at the bottom level."),
+        paragraph
+    ),
+    paragraph
+)
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<HeadingComp3 />)
+root.render(akhil())
