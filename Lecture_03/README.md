@@ -64,3 +64,17 @@ const HeadingComp3 = () => (
 )
 -->
 <!--note: without return is used only when there is not const etc in the comp -->
+
+Rendering a Comp => <ComponentName/>
+
+<!--? Rendering a component inside another component is called "component composition" -->
+
+<!--note: In the JSX we can write js code using {} -->
+<!--* inside the paranthesis we can write js code which works perfectly  -->
+
+<!--fix JSX takes care of injection attacks  -->
+<!--? any data which is wrapped inside {} jsx will not just blindly run it,jsx will sanitize it  -->
+
+<Component/> = <Component></Component>
+
+<!--todo: A functional component is a JS function at the end of the day, so we can render a component like this as well => "Component()" -->
