@@ -41,8 +41,8 @@ const Header = () => {
     )
 }
 
-const RestrauntCard = ({ resName, cousine }) => {
-    // console.log(props);
+const RestrauntCard = (props) => {
+    const { resName, cousine } = props;
     return (
         <div className="res-card" style={styleCard}>
             <img className="res-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIaUe-0wpJiG7OjK1SbmbRaY4Cy471floEWg&s" alt="res-logo" />
