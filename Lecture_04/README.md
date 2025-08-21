@@ -54,9 +54,25 @@ props are nothing but arguments that are passed to a Functional Component.
     )
     }
 
+<!--note: destructuring -->
+
+    const { resData } = props;
+    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } = resData;
+
 <RestrauntCard 
  resName="Jainth Foods" cousine="North Indian, South Indian, Non-Veg"
   />
 
 <!--head: Config Driven UI -->
 <!--idea: UI is basically driven by a config{backend thing} like based on backend logic {config} different UI is built -->
+
+<!--? optional chaining  -->
+
+# {resData?.sla.deliveryTime}
+
+# this means if resData is present then only do the search for sla.deliveryTime
+
+<!--todo: key property is used for uniquely identifying the elements when looping over the items like array. -->
+<!--? why we need keys -->
+<!--* if there are a lot of elements inside a component, and an element got some changes so if key in not present then the whole component will re render even if only one element in this changes, but if key is present then react will know which elements is changed and only that element will be re-rendered, same as,if a new element is inserted it will only be re-rendered not the whole comp if it has key    -->
+<!--note: using map it is not recommended by the react itself to use index which is a paramenter of map as "key", always try to use unique ids for example from the backend, if not we can use index as key but not recommended-->
