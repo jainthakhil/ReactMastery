@@ -524,7 +524,7 @@ const Header = () => {
 
 const RestrauntCard = (props) => {
     const { resData } = props;
-    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } = resData;
+    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla: { deliveryTime } } = resData;
     return (
         <div className="res-card" style={styleCard}>
             <img className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/" + cloudinaryImageId} alt="res-logo" />
@@ -532,7 +532,7 @@ const RestrauntCard = (props) => {
             <h4>{cuisines.join(", ")} </h4>
             <h4>{avgRating}</h4>
             <h4>{costForTwo}</h4>
-            <h4>{resData?.sla.deliveryTime} mins</h4>
+            <h4>{deliveryTime} mins</h4>
         </div>)
 
 }
