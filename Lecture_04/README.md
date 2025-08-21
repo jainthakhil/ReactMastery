@@ -58,6 +58,7 @@ props are nothing but arguments that are passed to a Functional Component.
 
     const { resData } = props;
     const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } = resData;
+    if data is present inside an object => const {sla: { deliveryTime } } = resData;
 
 <RestrauntCard 
  resName="Jainth Foods" cousine="North Indian, South Indian, Non-Veg"
