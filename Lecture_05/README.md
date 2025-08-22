@@ -33,4 +33,28 @@
 
 }
 
+# const [listOfRestraunt, setListOfRestraunt] = useState(resList);
+
+<!--* first parameter is the variable that holds the actual data, second parameter if the updator function which update the value inside the variable -->
 <!--note: whenever a state variable got update, React re-renders the component -->
+
+<!--? core Algorithms of React -->
+
+{
+
+<!--head: Reconciliation / React Fiber-->
+<!--* introduced in React 16 -->
+<!--note: When something changes on the UI, it is Reconciliation -->
+<!--* Virtual DOM - Representation of actual DOM / normal JS Object -->
+
+    <!--head Diff Algo -->
+    <!--* It finds out the difference bw updated Virtual DOM and the previous virtual DOM, and if diff is found then it update the DOM  -->
+
+    <!--? reconciliation=> -->
+    <!--note The algorithm React uses to diff one tree with another to determine which parts need to be changed.-->
+    <!--? update  -->
+    <!--note A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render. -->
+
+    <!--todo: Reconciliation is the algorithm behind what is popularly understood as the "virtual DOM." A high-level description goes something like this: when you render a React application, a tree of nodes that describes the app is generated and saved in memory. This tree is then flushed to the rendering environment — for example, in the case of a browser application, it's translated to a set of DOM operations. When the app is updated (usually via setState), a new tree is generated. The new tree is diffed with the previous tree to compute which operations are needed to update the rendered app. -->
+
+}
