@@ -47,7 +47,7 @@
 <!--note: When something changes on the UI, it is Reconciliation -->
 <!--* Virtual DOM - Representation of actual DOM / normal JS Object -->
 
-    <!--head Diff Algo -->
+    <!--head: Diff Algo -->
     <!--* It finds out the difference bw updated Virtual DOM and the previous virtual DOM, and if diff is found then it update the DOM  -->
 
     <!--? reconciliation=> -->
