@@ -102,3 +102,7 @@ element: <Contact />
 <!--* instead of this use <Link /> from react-router-dom -->
 
 <!--? React web applications are called single page applications as there is a thing called client side routing. -->
+
+<!-- dynamic routing  -->
+<!--* :/param => data after the ":" colon is dynamic like here param is dynamic for says -->
+<!--note: to access the dynamic route in the url we use a hook called useParam from react-router-dom -->

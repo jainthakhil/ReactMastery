@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [listOfRestraunt, setListOfRestraunt] = useState([]);
@@ -48,9 +49,13 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {
-                    searchedRes.map((item) => {
-                        return <RestrauntCard key={item.info.id} resData={item.info} />
-                    })
+                    searchedRes.map((item) =>
+                        <Link to={"restaurants/" + item.info.id} key={item.info.id}>
+                            <RestrauntCard resData={item.info} />
+
+                        </Link>
+
+                    )
                 }
 
             </div>
