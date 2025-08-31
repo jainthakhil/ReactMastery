@@ -106,3 +106,5 @@ element: <Contact />
 <!-- dynamic routing  -->
 <!--* :/param => data after the ":" colon is dynamic like here param is dynamic for says -->
 <!--note: to access the dynamic route in the url we use a hook called useParam from react-router-dom -->
+
+Behind the scene <Link/> component uses <a/> tag
