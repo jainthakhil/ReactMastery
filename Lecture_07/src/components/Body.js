@@ -12,13 +12,17 @@ const Body = () => {
         fetchData();
     }, [])
 
+
+    // https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.6903339&lng=77.40789079999999&carousel=true&third_party_vendor=1
+
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.6513339&lng=77.42832779999999&carousel=true&third_party_vendor=1");
+        const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.6903339&lng=77.40789079999999&carousel=true&third_party_vendor=1");
 
         const json = await data.json();
 
         const resData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         console.log(resData);
+
 
         setListOfRestraunt(resData)
         setSearchedRes(resData)
