@@ -39,3 +39,13 @@
 <!--? componentDidMount -->
 <!--* this method is called when the component is completely mounted  -->
 <!-- note: this method is called after the render mehtod called and finished fully, if there is a child of a comp then this will be called after the child in the render method is fully completed all the life cycle and then parent's componentDidMount will called -->
+
+<!-- fix: IMP NOTE -> componentDidMount() is used to make API calls because in react we used to render the component quickly first and then make a api call to to fill the data as we dont want to wait for the response  -->
+
+<!-- note: first the constructor is called then render method is called and this sums up to be called as render phase, after that React updates the DOM and this phase is called Commit phase -->
+<!--* constructor + render => Render Phase -->
+<!--*  Dom Update => Commit Phase -->
+<!--? why DOM updation is carried out in last because DOM manipulation is an expensive task, it takes time, it is a part of react optimization like it deals with actual DOM manipulation in last ans bathches the render phase in one thing -->
+
+<!--todo Making API call in componentDidMount() =>  async componentDidMount(){body of api call} -->
+<!--* we can make componentDidMount() as an async function -->
