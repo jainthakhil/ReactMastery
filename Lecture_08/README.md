@@ -49,3 +49,8 @@
 
 <!--todo Making API call in componentDidMount() =>  async componentDidMount(){body of api call} -->
 <!--* we can make componentDidMount() as an async function -->
+
+<!--? componentDidUpdate() is called after the mounting and there is a change in component -->
+<!--* after the component is updated the render method is called again -->
+
+<!--? componentWillUnmount() is called just after the component is going to unmount from the page -->
