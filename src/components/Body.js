@@ -2,16 +2,24 @@ import { useState, useEffect } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useFetchData from "../utils/useFetchData";
 
 const Body = () => {
     const [listOfRestraunt, setListOfRestraunt] = useState([]);
     const [searchText, setSearchText] = useState("")
     const [searchedRes, setSearchedRes] = useState([]);
+    const fetchedData = useFetchData();
 
     useEffect(() => {
-        fetchData();
-    }, [])
+        setListOfRestraunt(fetchedData)
+        console.log(fetchedData);
+        // fetchData();
+        // fetchedData
 
+
+    }, [fetchedData])
+
+    // console.log(fetchedData);
 
     // https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.6903339&lng=77.40789079999999&carousel=true&third_party_vendor=1
 
@@ -22,14 +30,12 @@ const Body = () => {
 
         const resData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         console.log(resData);
-
-
         setListOfRestraunt(resData)
         setSearchedRes(resData)
-
     }
+
     console.log("Body rendered")
-    return listOfRestraunt.length === 0 ? <Shimmer /> : (
+    return fetchedData.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className="search">
@@ -53,10 +59,10 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {
-                    searchedRes.map((item) =>
+
+                    fetchedData.map((item) =>
                         <Link to={"restaurants/" + item.info.id} key={item.info.id}>
                             <RestrauntCard resData={item.info} />
-
                         </Link>
 
                     )
