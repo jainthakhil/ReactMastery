@@ -12,9 +12,11 @@ const styleImg = {
 }
 const RestrauntCard = (props) => {
     const { resData } = props;
-    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla: { deliveryTime } } = resData;
+    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, isOpen, sla: { deliveryTime } } = resData;
+    console.log(isOpen);
     return (
         <div className="res-card" style={styleCard}>
+            <span className="res-status"> {isOpen ? "Open" : "Close"}</span>
             <img className="res-logo" style={styleImg} src={CDN_URL + cloudinaryImageId} alt="res-logo" />
             <h3>{name}</h3>
             <h4>{cuisines.join(", ")} </h4>

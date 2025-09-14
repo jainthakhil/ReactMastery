@@ -1,25 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { MENU_API } from "./constants";
 const useRestaurantMenu = (resId) => {
+    console.log("custom hook called");
+
+    const [resInfo, setResInfo] = useState(null);
 
     useEffect(() => {
         fetchData()
     }, [])
 
-    // const fetchData = async () => {
-    //     const data = await fetch()
-    // }
-
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.6903339&lng=77.40789079999999&carousel=true&third_party_vendor=1");
+        const data = await fetch(MENU_API + resId);
+        const json = await data.json()
+        console.log(json)
+        // setResInfo(json.data?.cards[2]?.card?.card?.info)
+        setResInfo(json);
 
-        const json = await data.json();
+        console.log(json.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards)
 
-        const resData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        console.log(resData);
+        console.log(json.data?.cards[2]?.card?.card?.info);
 
-
-        setListOfRestraunt(resData)
-        setSearchedRes(resData)
 
     }
     return resInfo;

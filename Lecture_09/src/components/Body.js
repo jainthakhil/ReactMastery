@@ -2,16 +2,25 @@ import { useState, useEffect } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useFetchData from "../utils/useFetchData";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [listOfRestraunt, setListOfRestraunt] = useState([]);
     const [searchText, setSearchText] = useState("")
     const [searchedRes, setSearchedRes] = useState([]);
 
+    const fetchedData = useFetchData();
+    const onlineStatus = useOnlineStatus();
+
     useEffect(() => {
+        // setListOfRestraunt(fetchedData)
+        // console.log(fetchedData);
         fetchData();
+        // fetchedData
     }, [])
 
+    // console.log(fetchedData);
 
     // https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.6903339&lng=77.40789079999999&carousel=true&third_party_vendor=1
 
@@ -21,14 +30,15 @@ const Body = () => {
         const json = await data.json();
 
         const resData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        console.log(resData);
-
-
+        console.log(data.json);
         setListOfRestraunt(resData)
         setSearchedRes(resData)
-
     }
+
     console.log("Body rendered")
+    if (!onlineStatus) {
+        return <h1>Oops look like you are offline, plaese connect to internet</h1>
+    }
     return listOfRestraunt.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
